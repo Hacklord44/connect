@@ -1,0 +1,232 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-weight: 500;    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    color: #333;
+    background-image: url(./images/bg1.jpeg);
+    background-repeat: no-repeat;
+}
+
+/* Navigation Bar */
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-brand img {
+    max-height: 40px;
+}
+
+/* Intro Section */
+.intro1 {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.intro-content h1 {
+    font-size: 2.5rem;
+    color: white;
+}
+.intro-content span {
+    font-size: 2.5rem;
+    color: blue;
+}
+
+.intro-content p {
+    font-size: 1.3rem;
+}
+
+/* Buttons */
+.btn {
+    margin: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Services Section */
+.create-sell {
+    padding: 60px 0;
+}
+.section-title h2 {
+    color: #ffff;
+}
+.section-title p {
+    color: #ffff;
+}
+
+.create-sell-content {
+    display: flex;
+    background: #343a40;
+    color: #fff;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
+    border: none;
+    margin-top: 30px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s;
+}
+
+.create-sell-content:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgb(114, 114, 155);
+}
+
+/* intro video play */
+.intro-video h2 {
+    margin-top: 50px;
+}
+.intro-video-play {
+    background-image: url(./images/left.jpeg);
+    background-size: cover;
+    background-position: 0 0;
+    min-height: 465px;
+    margin-top: 50px;
+    position: relative;
+    border-radius: 5px;
+    z-index: 1;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
+    box-shadow: 0 1.5rem 4rem rgba(22, 28, 45, 0.1);
+}
+
+.intro-video-play::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.play-btn {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.play-btn a {
+    background: #008AFF;
+    margin-top: 30px;
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    padding: 22px 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.play-btn a i {
+    color: #fff;
+    font-size: 30px;
+    line-height: 0px;
+}
+
+/* bottom */
+.grid-container {
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.grid-container img {
+    float: left;
+}
+.card2 {
+    float: left;
+    margin: 15px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px 0;
+    background-color: #343a40;
+    color: #fff;
+}
+
+.footer a {
+    color: #007bff;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+.copyright {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* Modal Styles */
+.modal-dialogue {
+    padding: 24px;
+    margin-top: 20px;
+}
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 24px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.modal-body {
+    padding: 20px;
+    font-weight: bold; /* Make text bold */
+    color: black; /* Change text color to black */
+}
+
+.modal-body li {
+    margin-bottom: 15px; /* Add space between list items */
+}
+
+.modal-body img {
+    margin-bottom: 10px; /* Add space between image and text */
+}
+
+.modal-body a {
+    margin-bottom: 10px; /* Add space between link and text */
+    color: black; /* Change link text color to black */
+    font-weight: bold; /* Ensure text is bold */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-footer .btn {
+    margin: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: auto;
+    }
+}

